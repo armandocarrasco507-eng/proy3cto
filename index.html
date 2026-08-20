@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Piedra, Papel o Tijeras</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<div id="menu-screen" class="menu-screen">
+
+    <!-- Partículas del fondo -->
+    <div class="particles"></div>
+
+    <!-- Elementos flotantes -->
+    <div class="floating-icon icon-rock">🪨</div>
+    <div class="floating-icon icon-paper">📄</div>
+    <div class="floating-icon icon-scissors">✂️</div>
+
+    <div class="menu-box">
+
+        <!-- Icono principal -->
+        <div class="menu-icon">🎮</div>
+
+        <!-- Título -->
+        <h1>
+            PIEDRA, PAPEL<br>
+            <span>O TIJERAS</span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <div class="arcade-subtitle">
+            ⚡ ARCADE BATTLE ⚡
+        </div>
+
+        <!-- Botones -->
+        <div class="menu-buttons">
+
+            <button class="menu-button" onclick="mostrarJuego()">
+                🎮 JUGAR
+            </button>
+
+            <button class="menu-button credits-button" onclick="mostrarCreditos()">
+                ⭐ CRÉDITOS
+            </button>
+
+        </div>
+
+        <!-- Texto arcade -->
+        <div class="press-start">
+            ▶ PRESS START ◀
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="credits-screen" class="credits-screen">
+
+    <div class="credits-box">
+
+        <div class="menu-icon">🏆</div>
+
+        <h2>CRÉDITOS</h2>
+
+        <p>Creador por:</p>
+
+        <div class="creators">
+            <span>Richard Stanley</span>
+            <span>Xander Lee</span>
+            <span>Armando Carrasco</span>
+        </div>
+
+        <button class="menu-button" onclick="volverMenu()">
+            ↩ VOLVER
+        </button>
+
+    </div>
+
+</div>
+    <main id="game-screen" class="game-container game-screen">
+
+        <header>
+            <div class="game-icon">🎮</div>
+
+            <h1>
+                PIEDRA, PAPEL<br>
+                <span>O TIJERAS</span>
+            </h1>
+
+            <p class="subtitle">
+                ⚡ ELIGE TU MOVIMIENTO ⚡
+            </p>
+        </header>
+
+
+        <section class="choices">
+
+            <button class="choice rock" onclick="jugar('piedra')">
+                <span class="emoji">🪨</span>
+                <span class="choice-name">PIEDRA</span>
+            </button>
+
+            <button class="choice paper" onclick="jugar('papel')">
+                <span class="emoji">📄</span>
+                <span class="choice-name">PAPEL</span>
+            </button>
+
+            <button class="choice scissors" onclick="jugar('tijeras')">
+                <span class="emoji">✂️</span>
+                <span class="choice-name">TIJERAS</span>
+            </button>
+
+        </section>
+
+
+        <section class="battle">
+
+            <div class="player">
+
+                <h3>TÚ</h3>
+
+                <div class="circle player-circle">
+                    <span id="jugadorEmoji">❔</span>
+                </div>
+
+                <p id="eleccionJugador">
+                    Esperando...
+                </p>
+
+            </div>
+
+
+            <div class="vs">
+                VS
+            </div>
+
+
+            <div class="player">
+
+                <h3>COMPUTADORA</h3>
+
+                <div class="circle computer-circle">
+                    <span id="computadoraEmoji">❔</span>
+                </div>
+
+                <p id="eleccionComputadora">
+                    Esperando...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="result-box">
+
+            <p>RESULTADO</p>
+
+            <h2 id="resultado">
+                ¡HAZ TU ELECCIÓN!
+            </h2>
+
+        </section>
+
+
+        <section class="score">
+
+            <div>
+                <span>JUGADOR</span>
+
+                <strong id="puntosJugador">
+                    0
+                </strong>
+            </div>
+
+
+            <div class="score-vs">
+                VS
+            </div>
+
+
+            <div>
+                <span>COMPUTADORA</span>
+
+                <strong id="puntosComputadora">
+                    0
+                </strong>
+            </div>
+
+        </section>
+
+
+        <button class="restart" onclick="reiniciar()">
+            🔄 REINICIAR PARTIDA
+        </button>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
